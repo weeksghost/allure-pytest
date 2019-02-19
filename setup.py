@@ -27,8 +27,12 @@ classifiers = [
 
 install_requires = [
     "pytest>=3.3.0",
-    "six>=1.9.0",
-    "allure-python-commons==2.5.5"
+    "six>=1.9.0"
+    #"allure-python-commons==2.5.5"
+]
+
+dependency_links = [
+    "https://github.com/weeksghost/allure-python-commons@2019-02-hacks#egg=allure-python-commons"
 ]
 
 
@@ -51,7 +55,8 @@ def main():
         packages=["allure_pytest"],
         package_dir={"allure_pytest": "src"},
         entry_points={"pytest11": ["allure_pytest = allure_pytest.plugin"]},
-        install_requires=install_requires
+        install_requires=install_requires,
+        dependency_links=dependency_links
     )
 
 if __name__ == '__main__':
